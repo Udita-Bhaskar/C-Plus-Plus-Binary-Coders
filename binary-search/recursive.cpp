@@ -22,7 +22,7 @@ int main()
 
 int binarySearch(int *arr, int low, int high, int key)
 {
-    if (low > high)
+    if (low > high) // base condition
         return -1; // key not found
 
     int mid = low + (high - low) / 2; // calculating the mid index
@@ -31,7 +31,7 @@ int binarySearch(int *arr, int low, int high, int key)
         return mid; // element found
 
     if (key < arr[mid])
-        return binarySearch(arr, low, mid - 1, key);
+        return binarySearch(arr, low, mid - 1, key); // updating the high pointer
 
-    return binarySearch(arr, mid + 1, high, key); // if (key > arr[mid])
+    return binarySearch(arr, mid + 1, high, key); // if (key > arr[mid])  and updating the low pointer
 }
